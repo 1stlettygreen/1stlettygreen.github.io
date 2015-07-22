@@ -1,22 +1,10 @@
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>.active>a:focus {
+	background-color: #4D2177;
+	/*background-image: -webkit-linear-gradient(#AD1AAC 100%, #4D2177 100%);*/
+	background-image:linear-gradient(to bottom,#4D2177 0,#4D2177 100%);
+	/*background-image: none !important;*/
+}
 
-
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.navbar-inverse .navbar-nav>li>a {
+	color: #fff;
+}
