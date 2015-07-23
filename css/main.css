@@ -1,10 +1,13 @@
-.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>.active>a:focus {
-	background-color: #4D2177;
-	/*background-image: -webkit-linear-gradient(#AD1AAC 100%, #4D2177 100%);*/
-	background-image:linear-gradient(to bottom,#4D2177 0,#4D2177 100%);
-	/*background-image: none !important;*/
+
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus {
+	background-color: #AD1AAC;
 }
 
-.navbar-inverse .navbar-nav>li>a {
+.nav-pills>li>a, .nav-pills>li>a:hover, .nav-pills>li>a:focus {
 	color: #fff;
+}
+
+.nav-pills>li>a:hover, .nav-pills>li>a:focus {
+	color: #000;
 }
