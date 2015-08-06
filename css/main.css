@@ -22,3 +22,14 @@
 .nav-pills>li>a:hover, .nav-pills>li>a:focus {
 	color: #000;
 }
+
+/* carousel slider */
+/* http://parkhurstdesign.com/improved-carousels-twitter-bootstrap/ */
+.slider-size {
+	height: 400px; /* This is your slider height */
+}
+
+.carousel {
+	width:100%;
+	margin:0 auto; /* center your carousel if other than 100% */
+}
