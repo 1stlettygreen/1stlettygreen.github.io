@@ -1,8 +1,6 @@
 ---
 layout: default
 permalink: /gallery/
-
-imagePath: /images/gallery/brownies/
 ---
 
 {% assign images = site.data.gallery.brownies %}
@@ -24,7 +22,7 @@ imagePath: /images/gallery/brownies/
 				<div class="carousel-inner" role="listbox">
 					{% for image in images %}
 						<div class="item {% if forloop.index == 1 %}active{% endif %}">
-							<div style="background:url('{{ page.imagePath }}{{ image.image }}') center center; background-size:cover;" class="slider-size">
+							<div style="background:url('{{ image.imageFilePath }}') center center; background-size:cover;" class="slider-size">
 								<div class="carousel-caption">
 									{% if image.title %}<h3>{{ image.title }}</h3>{% endif %}
 									{% if image.subTitle %}<h3>{{ image.subTitle }}</h3>{% endif %}
