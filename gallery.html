@@ -1,6 +1,8 @@
 ---
 layout: default
 permalink: /gallery/
+
+imagePath: /images/gallery/brownies/
 ---
 
 <div class="container" style="margin-top:50px;">
@@ -11,51 +13,23 @@ permalink: /gallery/
 			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 				<!-- Indicators -->
 				<ol class="carousel-indicators">
-					<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-					<li data-target="#carousel-example-generic" data-slide-to="1"></li>
-					<li data-target="#carousel-example-generic" data-slide-to="2"></li>
-					<li data-target="#carousel-example-generic" data-slide-to="3"></li>
-					<li data-target="#carousel-example-generic" data-slide-to="4"></li>
-					<li data-target="#carousel-example-generic" data-slide-to="5"></li>
+					{% for image in images %}
+						<li data-target="#carousel-example-generic" data-slide-to="{{ forloop.index | minus: 1 }}" class="{% if forloop.index == 1 %}active{% endif %}"></li>
+					{% endfor %}
 				</ol>
 
 				<!-- Wrapper for slides -->
 				<div class="carousel-inner" role="listbox">
-					<div class="item active">
-						<div style="background:url('/images/gallery/brownies/Halloween 2010_1a.jpg') center center; background-size:cover;" class="slider-size">
-							<div class="carousel-caption"></div>
+					{% for image in images %}
+						<div class="item {% if forloop.index == 1 %}active{% endif %}">
+							<div style="background:url('{{ page.imagePath }}{{ image.image }}') center center; background-size:cover;" class="slider-size">
+								<div class="carousel-caption">
+									{% if image.title %}<h3>{{ image.title }}</h3>{% endif %}
+									{% if image.subTitle %}<h3>{{ image.subTitle }}</h3>{% endif %}
+								</div>
+							</div>
 						</div>
-					</div>
-
-					<div class="item">
-						<div style="background:url('/images/gallery/brownies/Halloween 2010_2a.jpg') center center; background-size:cover;" class="slider-size">
-							<div class="carousel-caption"></div>
-						</div>
-					</div>
-
-					<div class="item">
-						<div style="background:url('/images/gallery/brownies/Halloween 2010_3a.jpg') center center; background-size:cover;" class="slider-size">
-							<div class="carousel-caption"></div>
-						</div>
-					</div>
-
-					<div class="item">
-						<div style="background:url('/images/gallery/brownies/Halloween 2010_5.jpg') center center; background-size:cover;" class="slider-size">
-							<div class="carousel-caption"></div>
-						</div>
-					</div>
-
-					<div class="item">
-						<div style="background:url('/images/gallery/brownies/Halloween 2010_7.jpg') center center; background-size:cover;" class="slider-size">
-							<div class="carousel-caption"></div>
-						</div>
-					</div>
-
-					<div class="item">
-						<div style="background:url('/images/gallery/brownies/Halloween 2010_8.jpg') center center; background-size:cover;" class="slider-size">
-							<div class="carousel-caption"></div>
-						</div>
-					</div>
+					{% endfor %}
 				</div>
 
 				<!-- Controls -->
